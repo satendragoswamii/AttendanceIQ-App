@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#4A90D9</color>
-    <color name="primary_dark">#3A7BC8</color>
-    <color name="primary_light">#5DA0E9</color>
-    <color name="accent">#00D9FF</color>
+    <!-- Primary Colors -->
+    <color name="primary">#2196F3</color>
+    <color name="primary_dark">#1976D2</color>
+    <color name="primary_light">#BBDEFB</color>
+    <color name="accent">#00BCD4</color>
+
+    <!-- Text Colors -->
     <color name="white">#FFFFFF</color>
+    <color name="white_alpha_80">#CCFFFFFF</color>
     <color name="black">#000000</color>
-    <color name="dark_background">#121212</color>
-    <color name="dark_surface">#1E1E1E</color>
-    <color name="light_gray">#B0B0B0</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#B0B0B0</color>
+
+    <!-- Background Colors -->
+    <color name="background">#121212</color>
+    <color name="surface">#1E1E1E</color>
+    <color name="card_background">#1E1E1E</color>
+
+    <!-- Status Bar -->
     <color name="status_bar">#0D0D0D</color>
+
+    <!-- Feature Colors -->
+    <color name="primary_alpha_20">#332196F3</color>
+    <color name="accent_alpha_20">#3300BCD4</color>
+    <color name="warning_alpha_20">#33FF9800</color>
+
+    <!-- Bottom Nav -->
+    <color name="bottom_nav_active">#2196F3</color>
+    <color name="bottom_nav_inactive">#757575</color>
 </resources>
