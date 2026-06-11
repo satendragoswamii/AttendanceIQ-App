@@ -14,15 +14,12 @@ import android.view.KeyEvent
 import android.view.View
 import android.webkit.*
 import android.widget.ProgressBar
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var webView: WebView
-    private lateinit var swipeRefresh: SwipeRefreshLayout
     private lateinit var progressBar: ProgressBar
     private lateinit var noNetworkView: View
     private lateinit var retryButton: View
@@ -38,7 +35,6 @@ class MainActivity : AppCompatActivity() {
 
         initViews()
         setupWebView()
-        setupSwipeRefresh()
 
         if (isNetworkAvailable()) {
             webView.loadUrl(WEBSITE_URL)
@@ -49,7 +45,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun initViews() {
         webView = findViewById(R.id.webView)
-        swipeRefresh = findViewById(R.id.swipeRefresh)
         progressBar = findViewById(R.id.progressBar)
         noNetworkView = findViewById(R.id.noNetworkView)
         retryButton = findViewById(R.id.retryButton)
@@ -102,7 +97,6 @@ class MainActivity : AppCompatActivity() {
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
                 progressBar.visibility = View.GONE
-                swipeRefresh.isRefreshing = false
             }
 
             override fun onReceivedError(view: WebView?, request: WebResourceRequest?, error: WebResourceError?) {
@@ -146,16 +140,6 @@ class MainActivity : AppCompatActivity() {
             } catch (e: Exception) {
                 Snackbar.make(webView, "Download failed", Snackbar.LENGTH_SHORT).show()
             }
-        }
-    }
-
-    private fun setupSwipeRefresh() {
-        swipeRefresh.setColorSchemeResources(
-            R.color.primary,
-            R.color.primary_dark
-        )
-        swipeRefresh.setOnRefreshListener {
-            webView.reload()
         }
     }
 
