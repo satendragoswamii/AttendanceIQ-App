@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.attendanceiq.app.R
 import com.google.android.material.button.MaterialButton
@@ -48,12 +49,6 @@ class HomeFragment : Fragment() {
             val editor = sharedPrefs.edit()
             editor.putBoolean("dark_mode", !isDarkMode)
             editor.apply()
-
-            val nightMode = if (!isDarkMode) {
-                AppCompatActivity.MODE_NIGHT_YES
-            } else {
-                AppCompatActivity.MODE_NIGHT_NO
-            }
             requireActivity().recreate()
         }
     }

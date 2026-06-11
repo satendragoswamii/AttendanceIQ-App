@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.attendanceiq.app.R
 import com.google.android.material.switchmaterial.SwitchMaterial
@@ -41,12 +40,6 @@ class AboutFragment : Fragment() {
             val editor = sharedPrefs.edit()
             editor.putBoolean("dark_mode", isChecked)
             editor.apply()
-
-            val nightMode = if (isChecked) {
-                AppCompatActivity.MODE_NIGHT_YES
-            } else {
-                AppCompatActivity.MODE_NIGHT_NO
-            }
             requireActivity().recreate()
         }
     }
